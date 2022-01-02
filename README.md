@@ -1,3 +1,4 @@
-The OpenShift `nodejs` cartridge documentation can be found at:
+# Flite-tools
 
-https://github.com/openshift/origin-server/tree/master/cartridges/openshift-origin-cartridge-nodejs/README.md
+Simple tools for aeromodelling
+
