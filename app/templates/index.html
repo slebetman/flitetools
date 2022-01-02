@@ -1,0 +1,7 @@
+<% layout('layout.html') %>
+
+<% for (var x in apps) { %>
+<div class="tool">
+	&bull; <a href="/<%= x %>"><%= apps[x] %></a>
+</div>
+<% } %>

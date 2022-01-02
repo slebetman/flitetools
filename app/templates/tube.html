@@ -1,0 +1,62 @@
+<%
+	script('/js/units.js');
+	script('/js/funnel_cutter.js');
+	script('/js/raphael-min.js');
+	script('/js/tube.js');
+	layout('layout.html');
+%>
+
+<div class="disclaimer">
+    Currently only supports plotting onto a single sheet of A4 paper.
+</div>
+
+<table>
+<tr>
+    <td>Input:</td>
+    <td><input id='in' type='number'></input></td>
+    <td>
+        <select id='in_type'>
+            <option value="diameter">diameter</option>
+            <option value="area">area</option>
+        </select>
+    </td>
+	<td>
+        <select id='in_unit'>
+            <option value="mm">mm</option>
+            <option value="cm">cm</option>
+            <option value="inch">inch</option>
+        </select>
+    </td>
+</tr>
+<tr>
+    <td>Output:</td>
+    <td><input id='out' type='number'></input></td>
+    <td>
+        <select id='out_type'>
+            <option value="diameter">diameter</option>
+            <option value="area">area</option>
+        </select>
+    </td>
+	<td>
+        <select id='out_unit'>
+            <option value="mm">mm</option>
+            <option value="cm">cm</option>
+            <option value="inch">inch</option>
+        </select>
+    </td>
+</tr>
+<tr>
+    <td>Length:</td>
+    <td><input id='length' type='number'></input></td>
+	<td>
+        <select id='length_unit'>
+            <option value="mm">mm</option>
+            <option value="cm">cm</option>
+            <option value="inch">inch</option>
+        </select>
+    </td>
+</tr>
+</table>
+Preview:
+<div id="canvas"></div>
+<a href="" id='pdflink' style='display:none'>Download PDF</a>

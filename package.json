@@ -1,0 +1,45 @@
+{
+  "name": "FliteTools",
+  "version": "1.0.0",
+  "description": "Online tools for aeromodelling",
+  "keywords": [
+    "OpenShift",
+    "Node.js",
+    "application",
+    "openshift"
+  ],
+  "author": {
+    "name": "slebetman",
+    "email": "slebetman@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitub.com/openshift/origin-server"
+  },
+
+  "engines": {
+    "node": ">= 0.6.0",
+    "npm": ">= 1.0.0"
+  },
+
+  "dependencies": {
+  	"pdfkit" : "*",
+  	"express" : "~3.0.0",
+  	"ejs" : "~0.8.0",
+  	"ejs-locals" : "~1.0.0",
+  	"chai" : "*",
+  	"chai-stats" : "*",
+  	"mocha" : "*",
+  	"mocha-unfunk-reporter" : "*"
+  },
+  "devDependencies": {},
+  "bundleDependencies": [],
+
+  "private": true,
+  
+  "scripts": {
+    "start": "node server.js"
+  },
+  
+  "main": "server.js"
+}

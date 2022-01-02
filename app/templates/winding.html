@@ -1,0 +1,50 @@
+<%
+	stylesheet('/css/winding.css');
+	script('/js/winding.js');
+	layout('layout.html');
+%>
+<div class="subheading">For Tan2 and Tan Super Sport</div>
+
+<div class="disclaimer">
+    Calculations based on formulas by Cezar Banks
+    as published in an article by Roger Willis in
+    the February 2005 issue of the Scale Staffel Newsletter.
+</div>
+<table>
+<tr>
+    <td>Motor Weight: </td>
+    <td><input id='weight' type='number'></input></td>
+    <td>
+        <select id='weight_unit'>
+            <option value="1">oz</option>
+            <option value="0.035274">g</option>
+        </select>
+    </td>
+</tr>
+<tr>
+    <td>Motor Length: </td>
+    <td><input id='length' type='number'></input></td>
+    <td>
+        <select id='length_unit'>
+            <option value="1">in</option>
+            <option value="0.393701">cm</option>
+            <option value="0.0393701">mm</option>
+        </select>
+    </td>
+</tr>
+<tr>
+    <td>Rubber: </td>
+    <td>
+        <select id='rubber'>
+            <option value="1.25" selected>Tan 2</option>
+            <option value="1.14">Super Sport</option>
+            <option value="custom">Custom Factor</option>
+        </select>
+    </td>
+    <td>
+        <input id="custom" type='number'></input><span id="custom_value"></span>
+    </td>
+</tr>
+</table>
+<button id="calculate">Calculate!</button>
+<div id="result"></div>

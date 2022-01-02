@@ -1,0 +1,16 @@
+#result {
+    margin-top: 2em;
+	width: 20em;
+	padding: 1em;
+	background: #ff9;
+	display: none;
+}
+#custom {
+     display: none;   
+}
+table {
+    margin: 0.5em;
+}
+td {
+    line-height: 2em;
+}
