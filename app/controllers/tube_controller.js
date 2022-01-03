@@ -20,11 +20,12 @@ var tube = {
 	pdf : function (req,res) {
 		var locals = assignLocals(req.query,['arc1','arc2','length']);
 		var pdf = require('../templates/tube/pdf.js');
-		pdf(locals,function(pdf_string){			
-			res.type('application/pdf');
-			res.attachment();
-			res.end(pdf_string,'binary');
-		});
+		var doc = pdf(locals);
+
+		res.type('application/pdf');
+		res.attachment();
+		doc.pipe(res);
+		doc.end();
 		
 		return 'no render';
 	}

@@ -2,7 +2,7 @@ var Units = require('../../js/units');
 var funnel_cutter = require('../../js/funnel_cutter');
 var PDFkit = require('pdfkit');
 
-module.exports = function pdf (locals,callback) {
+module.exports = function pdf (locals) {
 	var px = new Units('px');
 	var pdf = new PDFkit({size:'A4',layout:'landscape'});
 
@@ -14,5 +14,5 @@ module.exports = function pdf (locals,callback) {
 	pdf.translate(margin-bbox.x,margin-bbox.y).
 		path(svg.path).stroke();
 	
-	pdf.output(callback);
+	return pdf;
 }
