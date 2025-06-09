@@ -11,7 +11,7 @@ site.engine('.html', require('ejs-locals'));
 site.set('view engine','html');
 site.set('views',__dirname + '/app/templates');
 
-site.get('/favicon.*',function(req,res){
+site.get('/favicon.*_',function(req,res){
 	res.send('');
 });
 
@@ -42,12 +42,12 @@ site.get('/',function(req,res){
 	});
 });
 
-site.get('/js/*',function(req,res){
-	res.sendfile(__dirname + '/app/js/' + req.params[0]);
+site.get('/js/*_',function(req,res){
+	res.sendfile(__dirname + '/app/js/' + req.params._);
 });
 
-site.get('/css/*',function(req,res){
-	res.sendfile(__dirname + '/app/css/' + req.params[0]);
+site.get('/css/*_',function(req,res){
+	res.sendfile(__dirname + '/app/css/' + req.params._);
 });
 
 site.get('/:app',function(req,res){
@@ -85,4 +85,4 @@ site.use(function(error, req, res, next) {
 });
 
 site.listen(port,ipaddress);
-console.log('Server started..');
+console.log(`Server started at port ${port} ...`);
