@@ -3,8 +3,7 @@ var fs = require('fs');
 var express = require('express');
 var site = express();
 
-var ipaddress = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
-var port      = process.env.OPENSHIFT_NODEJS_PORT || 8080;
+var port      = process.env.PORT || 8080;
 var controllers = __dirname + '/app/controllers/';
 
 site.engine('.html', require('ejs-locals'));
@@ -43,11 +42,11 @@ site.get('/',function(req,res){
 });
 
 site.get('/js/*_',function(req,res){
-	res.sendfile(__dirname + '/app/js/' + req.params._);
+	res.sendFile(__dirname + '/app/js/' + req.params._.join('/'));
 });
 
 site.get('/css/*_',function(req,res){
-	res.sendfile(__dirname + '/app/css/' + req.params._);
+	res.sendFile(__dirname + '/app/css/' + req.params._.join('/'));
 });
 
 site.get('/:app',function(req,res){
@@ -84,5 +83,5 @@ site.use(function(error, req, res, next) {
 	});
 });
 
-site.listen(port,ipaddress);
+site.listen(port);
 console.log(`Server started at port ${port} ...`);
