@@ -38,6 +38,9 @@ var funnel_cutter = {
 	area2perimeter : function (area) {
 		return fixNumbers(Math.sqrt(area/PI) * 2 * PI,5);
 	},
+	radius2perimeter : function (radius) {
+		return fixNumbers(PI * radius * 2,5);
+	},
 	diameter2perimeter : function (diameter) {
 		return fixNumbers(PI * diameter,5);
 	},
